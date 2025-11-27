@@ -23,6 +23,9 @@ export function Chatbot() {
   const [isLoading, setIsLoading] = useState(false);
   const isMobile = useIsMobile();
 
+  const chatCardRef = useRef<HTMLDivElement>(null);
+  const fabRef = useRef<HTMLButtonElement>(null);
+
   const toggleOpen = () => setIsOpen(!isOpen);
 
   useEffect(() => {
@@ -36,6 +39,25 @@ export function Chatbot() {
     }
   }, [isOpen]);
   
+  useEffect(() => {
+    function handleClickOutside(event: MouseEvent) {
+      if (
+        isOpen &&
+        chatCardRef.current &&
+        !chatCardRef.current.contains(event.target as Node) &&
+        fabRef.current &&
+        !fabRef.current.contains(event.target as Node)
+      ) {
+        setIsOpen(false);
+      }
+    }
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [isOpen]);
+
   const viewportRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -74,6 +96,7 @@ export function Chatbot() {
   return (
     <>
       <Button
+        ref={fabRef}
         onClick={toggleOpen}
         className={cn(
             'fixed z-[60] h-16 w-16 rounded-full shadow-lg transition-transform hover:-translate-y-1',
@@ -81,13 +104,14 @@ export function Chatbot() {
         )}
         aria-label={isOpen ? "Close chatbot" : "Open chatbot"}
       >
-        {isOpen ? <X className="h-8 w-8" /> : <MessageSquare className="h-8 w-8" />}
+        {isOpen ? <X className="h-6 w-6" /> : <MessageSquare className="h-8 w-8" />}
       </Button>
 
       <div
+        ref={chatCardRef}
         className={cn(
           'fixed z-50 w-[calc(100vw-2rem)] max-w-sm rounded-lg shadow-xl origin-bottom-right transition-all duration-300 ease-in-out',
-           isMobile ? 'bottom-[6.5rem] right-4' : 'bottom-24 right-6',
+           isMobile ? 'bottom-24 right-4 sm:bottom-[6.5rem]' : 'bottom-24 right-6',
           isOpen
             ? 'opacity-100 translate-y-0 scale-100'
             : 'opacity-0 translate-y-12 scale-90 pointer-events-none'
