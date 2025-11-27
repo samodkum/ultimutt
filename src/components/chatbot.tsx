@@ -69,14 +69,14 @@ export function Chatbot() {
     }
   };
 
-  const fabPosition = isMobile ? 'bottom-20' : 'bottom-6';
+  const fabPosition = isMobile ? 'bottom-20 right-4' : 'bottom-6 right-6';
 
   return (
     <>
       <Button
         onClick={toggleOpen}
         className={cn(
-            'fixed right-4 z-[60] h-16 w-16 rounded-full shadow-lg transition-transform hover:-translate-y-1',
+            'fixed z-[60] h-16 w-16 rounded-full shadow-lg transition-transform hover:-translate-y-1',
             fabPosition
         )}
         aria-label={isOpen ? "Close chatbot" : "Open chatbot"}
@@ -86,8 +86,8 @@ export function Chatbot() {
 
       <div
         className={cn(
-          'fixed right-4 z-50 w-[calc(100vw-2rem)] max-w-sm rounded-lg shadow-xl origin-bottom-right transition-all duration-300 ease-in-out',
-          isMobile ? 'bottom-[6.5rem]' : 'bottom-24',
+          'fixed z-50 w-[calc(100vw-2rem)] max-w-sm rounded-lg shadow-xl origin-bottom-right transition-all duration-300 ease-in-out',
+          isMobile ? 'bottom-[6.5rem] right-4' : 'bottom-24 right-6',
           isOpen
             ? 'opacity-100 translate-y-0 scale-100'
             : 'opacity-0 translate-y-12 scale-90 pointer-events-none'
