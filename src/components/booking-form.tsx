@@ -46,7 +46,7 @@ const bookingFormSchema = z.object({
   dateRange: z.object({
     from: z.date({ required_error: "Check-in date is required." }),
     to: z.date().optional(),
-  }),
+  }).optional(),
   addons: z.array(z.string()).optional(),
   notes: z.string().max(500, "Notes cannot exceed 500 characters.").optional(),
 });
@@ -68,11 +68,26 @@ export function BookingForm() {
         age: "",
         addons: [],
         notes: "",
+        dateRange: {
+            from: undefined,
+            to: undefined,
+        },
     },
   });
 
   function onSubmit(data: BookingFormValues) {
     setLoading(true);
+    
+    if (!data.dateRange?.from) {
+        toast({
+            variant: "destructive",
+            title: "Booking failed!",
+            description: "Please select a check-in date.",
+        });
+        setLoading(false);
+        return;
+    }
+
     const message = `
 New Booking Request from ${data.parentName}:
 --------------------
@@ -161,7 +176,7 @@ Notes:
             <FormField control={form.control} name="dateRange" render={({ field }) => (
                 <FormItem className="flex flex-col"><FormLabel>Check-in & Check-out Dates</FormLabel>
                     <Popover><PopoverTrigger asChild>
-                        <FormControl><Button variant={"outline"} className={cn("w-full justify-start text-left font-normal", !field.value.from && "text-muted-foreground")}>
+                        <FormControl><Button variant={"outline"} className={cn("w-full justify-start text-left font-normal", !field.value?.from && "text-muted-foreground")}>
                             <CalendarIcon className="mr-2 h-4 w-4" />
                             {field.value?.from ? ( field.value.to ? (<> {format(field.value.from, "LLL dd, y")} - {format(field.value.to, "LLL dd, y")} </>) : (format(field.value.from, "LLL dd, y")) ) : (<span>Pick a date range</span>)}
                         </Button></FormControl>
