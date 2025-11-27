@@ -87,7 +87,7 @@ export function Chatbot() {
       <div
         className={cn(
           'fixed z-50 w-[calc(100vw-2rem)] max-w-sm rounded-lg shadow-xl origin-bottom-right transition-all duration-300 ease-in-out',
-          isMobile ? 'bottom-[6.5rem] right-4' : 'bottom-24 right-6',
+           isMobile ? 'bottom-[6.5rem] right-4' : 'bottom-24 right-6',
           isOpen
             ? 'opacity-100 translate-y-0 scale-100'
             : 'opacity-0 translate-y-12 scale-90 pointer-events-none'
