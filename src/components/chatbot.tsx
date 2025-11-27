@@ -69,7 +69,7 @@ export function Chatbot() {
     }
   };
 
-  const fabPosition = isMobile ? 'bottom-24' : 'bottom-6';
+  const fabPosition = isMobile ? 'bottom-20' : 'bottom-6';
 
   return (
     <>
@@ -87,7 +87,7 @@ export function Chatbot() {
       <div
         className={cn(
           'fixed right-4 z-50 w-[calc(100vw-2rem)] max-w-sm rounded-lg shadow-xl origin-bottom-right transition-all duration-300 ease-in-out',
-          fabPosition,
+          isMobile ? 'bottom-[6.5rem]' : 'bottom-24',
           isOpen
             ? 'opacity-100 translate-y-0 scale-100'
             : 'opacity-0 translate-y-12 scale-90 pointer-events-none'
