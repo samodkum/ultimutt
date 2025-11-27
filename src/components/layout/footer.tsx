@@ -52,7 +52,7 @@ export function Footer() {
             <address className="mt-4 space-y-2 text-sm text-muted-foreground not-italic">
               <p>Faridabad – Gurgaon Rd, near CNG pump, Gwal Pahari, Gurugram, Bandhwari, Haryana 122003</p>
               <p>Contact for Booking:</p>
-              <p className="flex items-center gap-2"><MessageSquare size={14} /> +91 87870 04236</p>
+              <p className="flex items-center gap-2"><MessageSquare size={14} /> +91 8595993867</p>
               <p className="flex items-center gap-2"><Phone size={14}/> +91 8069061326</p>
             </address>
           </div>
