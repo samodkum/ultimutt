@@ -33,9 +33,12 @@ export function HeroSection() {
           <p className="text-lg md:text-xl text-slate-200">
             A cage-free, leash-free daycare & boarding resort for dogs.
           </p>
-          <div className="flex flex-wrap gap-4">
+          <div className="flex flex-col sm:flex-row flex-wrap gap-4">
             <Button asChild size="lg" variant="secondary">
               <Link href="/booking">Book Now</Link>
+            </Button>
+            <Button asChild size="lg" variant="outline" className="sm:hidden bg-transparent text-white border-white hover:bg-white hover:text-primary">
+              <Link href="/services">See Services</Link>
             </Button>
           </div>
         </AnimatedSection>
