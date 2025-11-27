@@ -99,12 +99,13 @@ export function Chatbot() {
         ref={fabRef}
         onClick={toggleOpen}
         className={cn(
-            'fixed z-[60] h-16 w-16 rounded-full shadow-lg transition-transform hover:-translate-y-1',
-            fabPosition
+            'fixed z-[60] h-14 w-14 rounded-full shadow-lg transition-all hover:-translate-y-1',
+            fabPosition,
+            isOpen ? 'opacity-0 scale-0' : 'opacity-100 scale-100'
         )}
-        aria-label={isOpen ? "Close chatbot" : "Open chatbot"}
+        aria-label={"Open chatbot"}
       >
-        {isOpen ? <X className="h-6 w-6" /> : <MessageSquare className="h-8 w-8" />}
+        <MessageSquare className="h-7 w-7" />
       </Button>
 
       <div
@@ -117,12 +118,17 @@ export function Chatbot() {
             : 'opacity-0 translate-y-12 scale-90 pointer-events-none'
         )}
       >
-        <Card className="h-[70vh] max-h-[600px] flex flex-col">
+        <Card className="h-[60vh] md:h-[70vh] max-h-[600px] flex flex-col">
           <CardHeader className="flex flex-row items-center gap-3 border-b">
             <Avatar>
                 <AvatarFallback className='bg-primary text-primary-foreground'><Bot /></AvatarFallback>
             </Avatar>
-            <CardTitle>Ultimutt AI Assistant</CardTitle>
+            <div className='flex-1'>
+                <CardTitle>Ultimutt AI Assistant</CardTitle>
+            </div>
+            <Button variant="ghost" size="icon" onClick={toggleOpen} className="h-8 w-8">
+                <X className="h-4 w-4" />
+            </Button>
           </CardHeader>
           <CardContent className="flex-grow overflow-hidden p-4">
             <ScrollArea className="h-full" viewportRef={viewportRef}>
