@@ -6,7 +6,6 @@ import { Button } from '@/components/ui/button';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { AnimatedSection } from '@/components/animated-section';
 import { WaveDivider } from '../wave-divider';
-import { Phone, MessageSquare } from 'lucide-react';
 
 export function HeroSection() {
   const heroImage = PlaceHolderImages.find((img) => img.id === 'hero-1');
@@ -35,11 +34,8 @@ export function HeroSection() {
             A cage-free, leash-free daycare & boarding resort for dogs.
           </p>
           <div className="flex flex-wrap gap-4">
-            <Button asChild size="lg">
-              <a href="https://wa.me/918717004236" target="_blank" rel="noopener noreferrer"><MessageSquare /> WhatsApp</a>
-            </Button>
-            <Button asChild variant="secondary" size="lg">
-              <a href="tel:+918069061326"><Phone /> Call Us</a>
+            <Button asChild size="lg" variant="secondary">
+              <Link href="/booking">Book Now</Link>
             </Button>
           </div>
         </AnimatedSection>

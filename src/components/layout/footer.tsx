@@ -51,8 +51,9 @@ export function Footer() {
             </h3>
             <address className="mt-4 space-y-2 text-sm text-muted-foreground not-italic">
               <p>Faridabad – Gurgaon Rd, near CNG pump, Gwal Pahari, Gurugram, Bandhwari, Haryana 122003</p>
-              <p className="flex items-center gap-2"><Phone size={14}/> +91 8069061326</p>
+              <p>Contact for Booking:</p>
               <p className="flex items-center gap-2"><MessageSquare size={14} /> +91 8717004236</p>
+              <p className="flex items-center gap-2"><Phone size={14}/> +91 8069061326</p>
             </address>
           </div>
           <div>
@@ -61,7 +62,7 @@ export function Footer() {
             </h3>
             <div className="flex mt-4 space-x-4">
               <a
-                href="https://www.instagram.com/ultimuttresort"
+                href="https://www.instagram.com/ultimutt_petservices?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
                 aria-label="Instagram"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -81,7 +82,7 @@ export function Footer() {
         </div>
         <div className="mt-8 border-t border-border pt-8 text-center text-sm text-muted-foreground">
           <p>
-            © {new Date().getFullYear()} ©Ultimutt. All rights reserved.
+            © 2024 ©Ultimutt. All rights reserved.
           </p>
         </div>
       </div>

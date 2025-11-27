@@ -1,10 +1,9 @@
 'use client';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Home, Sparkles, BedDouble, Sun, Phone, MessageSquare } from 'lucide-react';
+import { Home, Sparkles, BedDouble, Sun, Phone } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { useIsMobile } from '@/hooks/use-mobile';
-import { Button } from '../ui/button';
 
 const navItems = [
   { href: '/', icon: Home, label: 'Home' },
@@ -24,19 +23,25 @@ export function MobileNav() {
 
   return (
     <nav className="md:hidden fixed bottom-4 left-1/2 -translate-x-1/2 w-[calc(100%-2rem)] max-w-sm bg-card/90 backdrop-blur-sm rounded-full shadow-lg z-50 p-2">
-      <div className="flex justify-around items-center h-16 gap-2">
-        <Button asChild className="flex-1 h-full rounded-full flex-col gap-1 text-xs" variant="outline">
-          <a href="https://wa.me/918717004236" target="_blank" rel="noopener noreferrer">
-            <MessageSquare className="w-5 h-5" />
-            WhatsApp
-          </a>
-        </Button>
-         <Button asChild className="flex-1 h-full rounded-full flex-col gap-1 text-xs">
-          <a href="tel:+918069061326">
-            <Phone className="w-5 h-5" />
-            Call
-          </a>
-        </Button>
+      <div className="flex justify-around items-center h-12">
+        {navItems.map((item) => {
+          const isActive = pathname === item.href;
+          return (
+            <Link
+              key={item.href}
+              href={item.href}
+              className={cn(
+                'flex flex-col items-center justify-center text-xs w-16 h-12 rounded-full transition-colors',
+                isActive
+                  ? 'bg-primary text-primary-foreground'
+                  : 'text-muted-foreground hover:bg-accent'
+              )}
+            >
+              <item.icon className="h-5 w-5 mb-0.5" />
+              <span>{item.label}</span>
+            </Link>
+          );
+        })}
       </div>
     </nav>
   );
