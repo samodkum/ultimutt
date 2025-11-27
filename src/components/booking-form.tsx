@@ -88,8 +88,7 @@ export function BookingForm() {
         return;
     }
 
-    const message = `
-New Booking Request from ${data.parentName}:
+    const message = `New Booking Request from ${data.parentName}:
 --------------------
 Service: ${data.serviceType}
 Check-in: ${format(data.dateRange.from, "PPP")}
@@ -115,7 +114,7 @@ Notes:
 
     // Simulate API call and open WhatsApp
     setTimeout(() => {
-        const whatsappUrl = `https://wa.me/918787004236?text=${encodeURIComponent(message)}`;
+        const whatsappUrl = `https://wa.me/918787004236?text=${encodeURIComponent(message.trim())}`;
         window.open(whatsappUrl, '_blank');
         
         toast({
