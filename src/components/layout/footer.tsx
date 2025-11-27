@@ -1,7 +1,7 @@
 import { Logo } from '@/components/logo';
 import { WaveDivider } from '@/components/wave-divider';
 import Link from 'next/link';
-import { Instagram, Facebook, Phone, MessageSquare } from 'lucide-react';
+import { Instagram, Phone, MessageSquare } from 'lucide-react';
 
 const footerLinks = [
   { href: '/', label: 'Home' },
@@ -69,13 +69,6 @@ export function Footer() {
                 className="text-muted-foreground hover:text-primary"
               >
                 <Instagram />
-              </a>
-              <a
-                href="#"
-                aria-label="Facebook"
-                className="text-muted-foreground hover:text-primary"
-              >
-                <Facebook />
               </a>
             </div>
           </div>
