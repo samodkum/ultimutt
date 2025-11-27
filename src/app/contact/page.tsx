@@ -62,7 +62,7 @@ export default function ContactPage() {
                                 </CardHeader>
                                 <CardContent className="space-y-4 text-muted-foreground">
                                     <div className="flex items-start gap-4"><MapPin className="text-primary mt-1 h-5 w-5 flex-shrink-0" /><span>123 Puppy Lane, Sector 56, Gurgaon, Haryana 122011</span></div>
-                                    <div className="flex items-center gap-4"><Phone className="text-primary h-5 w-5 flex-shrink-0" /><span>+91 98765 43210</span></div>
+                                    <div className="flex items-center gap-4"><Phone className="text-primary h-5 w-5 flex-shrink-0" /><span>+91 9315435356</span></div>
                                     <div className="flex items-center gap-4"><Mail className="text-primary h-5 w-5 flex-shrink-0" /><span>contact@ultimutt.com</span></div>
                                     <div className="flex items-center gap-4"><Clock className="text-primary h-5 w-5 flex-shrink-0" /><span>Open Daily: 8:00 AM - 8:00 PM</span></div>
                                 </CardContent>

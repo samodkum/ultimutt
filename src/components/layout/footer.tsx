@@ -53,8 +53,8 @@ export function Footer() {
             </h3>
             <address className="mt-4 space-y-2 text-sm text-muted-foreground not-italic">
               <p>123 Puppy Lane, Gurgaon, India</p>
-              <p>Phone: +91 98765 43210</p>
-              <p>WhatsApp: +91 98765 43210</p>
+              <p>Phone: +91 9315435356</p>
+              <p>WhatsApp: +91 9315435356</p>
               <p>Email: contact@ultimutt.com</p>
             </address>
           </div>
