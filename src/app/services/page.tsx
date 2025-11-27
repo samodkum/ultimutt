@@ -8,15 +8,13 @@ import { AnimatedSection } from "@/components/animated-section";
 import { WaveDivider } from "@/components/wave-divider";
 
 const boardingServices = [
-  { name: "Standard Boarding", price: "₹1200/night", description: "A cozy and safe spot for your pup.", imgId: "service-boarding" },
-  { name: "Premium Suites", price: "₹2000/night", description: "Spacious private suite with a comfy bed and webcam access.", imgId: "service-boarding" },
-  { name: "Long-Stay Boarding", price: "Contact us", description: "Special packages for stays longer than 15 days.", imgId: "service-boarding" },
+  { name: "Small/Medium Dog", price: "₹1000/night", description: "A cozy and safe spot for your pup.", imgId: "service-boarding" },
+  { name: "Large Dog", price: "₹1200/night", description: "Spacious private suite with a comfy bed.", imgId: "service-boarding" },
+  { name: "Fresh cooked meals (optional)", price: "₹100/meal", description: "Special packages for stays longer than 15 days.", imgId: "service-boarding" },
 ];
 
 const daycareServices = [
-    { name: "Half Day (5 hours)", price: "₹600", description: "Perfect for a few hours of play and socialization.", imgId: "service-daycare" },
-    { name: "Full Day (10 hours)", price: "₹1000", description: "A full day of fun, games, and nap time.", imgId: "service-daycare" },
-    { name: "Monthly Pass", price: "₹18000", description: "Unlimited daycare for a full month. Best value!", imgId: "service-daycare" },
+    { name: "Full Day (Up to 10 hours)", price: "₹700", description: "A full day of fun, games, and nap time.", imgId: "service-daycare" },
 ];
 
 const groomingServices = [
@@ -26,9 +24,15 @@ const groomingServices = [
 ];
 
 const addons = [
-    { name: "Extra Walk", price: "₹200", description: "A 20-minute private walk around the neighborhood.", imgId: "service-training" },
-    { name: "Gourmet Meal", price: "₹300", description: "A special, freshly cooked meal for your pet.", imgId: "service-training" },
-    { name: "Pet Taxi", price: "Based on distance", description: "Convenient pick-up and drop-off service.", imgId: "service-training" },
+    { name: "Pickup & Drop", price: "₹15/km", description: "One-way distance billed once. Toll charges added if applicable.", imgId: "service-training" },
+];
+
+const dailySchedule = [
+    "8:30 am — Breakfast",
+    "9:00–11:00 am — Outdoor play, checks & grooming touch-ups",
+    "11:30 am–1:00 pm — Nap",
+    "1:00–1:30 pm — Buttermilk/lunch",
+    "1:30–6:30 pm — Outdoor play & pee/poop breaks",
 ];
 
 const ServiceCard = ({ name, price, description, imgId }: { name: string, price: string, description: string, imgId: string }) => {
@@ -77,7 +81,7 @@ export default function ServicesPage() {
               <TabsTrigger value="boarding" className="py-2">Boarding</TabsTrigger>
               <TabsTrigger value="daycare" id="daycare" className="py-2">Daycare</TabsTrigger>
               <TabsTrigger value="grooming" id="grooming" className="py-2">Grooming</TabsTrigger>
-              <TabsTrigger value="addons" className="py-2">Add-ons</TabsTrigger>
+              <TabsTrigger value="addons" className="py-2">Pickup/Drop</TabsTrigger>
             </TabsList>
           </AnimatedSection>
 
@@ -88,9 +92,24 @@ export default function ServicesPage() {
               </div>
             </TabsContent>
             <TabsContent value="daycare">
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                {daycareServices.map(s => <ServiceCard key={s.name} {...s} />)}
-              </div>
+                <div className="text-center mb-12">
+                    <h2 className="text-3xl font-bold md:text-4xl font-headline">Let Your Doggo Have an Ultimutt Day!</h2>
+                </div>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div className="md:col-span-2">
+                        <Card>
+                            <CardHeader><CardTitle>Daily Schedule Example</CardTitle></CardHeader>
+                            <CardContent>
+                                <ul className="space-y-2">
+                                    {dailySchedule.map(item => <li key={item}>{item}</li>)}
+                                </ul>
+                            </CardContent>
+                        </Card>
+                    </div>
+                    <div>
+                        {daycareServices.map(s => <ServiceCard key={s.name} {...s} />)}
+                    </div>
+                </div>
             </TabsContent>
             <TabsContent value="grooming">
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

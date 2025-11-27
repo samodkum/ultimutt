@@ -1,14 +1,13 @@
 import { Logo } from '@/components/logo';
 import { WaveDivider } from '@/components/wave-divider';
 import Link from 'next/link';
-import { Instagram, Facebook } from 'lucide-react';
+import { Instagram, Facebook, Phone, MessageSquare } from 'lucide-react';
 
 const footerLinks = [
   { href: '/', label: 'Home' },
   { href: '/services', label: 'Services' },
   { href: '/booking', label: 'Boarding' },
   { href: '/services#daycare', label: 'Daycare' },
-  { href: '/services#grooming', label: 'Grooming' },
   { href: '/gallery', label: 'Gallery' },
   { href: '/contact', label: 'Contact' },
 ];
@@ -26,8 +25,7 @@ export function Footer() {
           <div className="md:col-span-1">
             <Logo className="text-foreground" />
             <p className="mt-4 text-sm text-muted-foreground">
-              Premium dog boarding & daycare in Gurgaon, providing safe, fun,
-              and loving care for your furry family members.
+             A cage-free, leash-free daycare & boarding resort for dogs.
             </p>
           </div>
           <div>
@@ -52,10 +50,9 @@ export function Footer() {
               Contact Us
             </h3>
             <address className="mt-4 space-y-2 text-sm text-muted-foreground not-italic">
-              <p>123 Puppy Lane, Gurgaon, India</p>
-              <p>Phone: +91 9315435356</p>
-              <p>WhatsApp: +91 9315435356</p>
-              <p>Email: contact@ultimutt.com</p>
+              <p>Faridabad – Gurgaon Rd, near CNG pump, Gwal Pahari, Gurugram, Bandhwari, Haryana 122003</p>
+              <p className="flex items-center gap-2"><Phone size={14}/> +91 8069061326</p>
+              <p className="flex items-center gap-2"><MessageSquare size={14} /> +91 8717004236</p>
             </address>
           </div>
           <div>
@@ -64,8 +61,10 @@ export function Footer() {
             </h3>
             <div className="flex mt-4 space-x-4">
               <a
-                href="#"
+                href="https://www.instagram.com/ultimuttresort"
                 aria-label="Instagram"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-muted-foreground hover:text-primary"
               >
                 <Instagram />
@@ -82,8 +81,7 @@ export function Footer() {
         </div>
         <div className="mt-8 border-t border-border pt-8 text-center text-sm text-muted-foreground">
           <p>
-            &copy; {new Date().getFullYear()} Ultimutt Pet Resort. All rights
-            reserved.
+            © {new Date().getFullYear()} ©Ultimutt. All rights reserved.
           </p>
         </div>
       </div>

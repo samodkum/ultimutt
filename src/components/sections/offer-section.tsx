@@ -1,5 +1,5 @@
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
-import { Dog, Bath, Bone, ShieldCheck } from "lucide-react";
+import { Dog, Bone, Building, Star } from "lucide-react";
 import { AnimatedSection } from "../animated-section";
 import Image from 'next/image';
 import { PlaceHolderImages } from "@/lib/placeholder-images";
@@ -21,18 +21,18 @@ const offers = [
     link: "/services#daycare"
   },
   {
-    icon: Bath,
-    title: "Grooming & Bath",
-    description: "Keep your pet fresh and clean with our professional grooming services.",
-    imgId: "service-grooming",
-    link: "/services#grooming"
+    icon: Building,
+    title: "Facility Tour",
+    description: "Come see our clean, safe, and fun environment for your furry friend.",
+    imgId: "gallery-5",
+    link: "/gallery"
   },
   {
-    icon: ShieldCheck,
-    title: "Training",
-    description: "Basic obedience and socialization classes with certified trainers.",
-    imgId: "service-training",
-    link: "/services"
+    icon: Star,
+    title: "Testimonials",
+    description: "See what other pet parents have to say about our top-notch care.",
+    imgId: "testimonial-2",
+    link: "/#testimonials"
   }
 ];
 

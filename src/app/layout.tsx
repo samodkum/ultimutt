@@ -7,9 +7,9 @@ import { MobileNav } from '@/components/layout/mobile-nav';
 import { Chatbot } from '@/components/chatbot';
 
 export const metadata: Metadata = {
-  title: 'Ultimutt Pet Resort | Premium Dog Boarding & Daycare in Gurgaon',
+  title: 'Ultimutt Pet Resort | Dog Boarding Gurgaon & Daycare Gurgaon',
   description:
-    'Safe, supervised, and fun stays for your dog — whether it’s a day visit or an extended vacation.',
+    'A cage-free, leash-free daycare & boarding resort for dogs in Gurgaon & Delhi/NCR. Safe, supervised, and fun stays for your dog.',
 };
 
 export default function RootLayout({

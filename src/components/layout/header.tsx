@@ -4,14 +4,13 @@ import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Logo } from '@/components/logo';
 import { cn } from '@/lib/utils';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Phone, MessageSquare } from 'lucide-react';
 
 const navLinks = [
   { href: '/', label: 'Home' },
   { href: '/services', label: 'Services' },
   { href: '/booking', label: 'Boarding' },
   { href: '/services#daycare', label: 'Daycare' },
-  { href: '/services#grooming', label: 'Grooming' },
   { href: '/gallery', label: 'Gallery' },
   { href: '/contact', label: 'Contact' },
 ];
@@ -53,8 +52,15 @@ export function Header() {
           ))}
         </nav>
         <div className="flex items-center gap-2">
-          <Button asChild className="hidden sm:inline-flex">
-            <Link href="/booking">Book a Stay</Link>
+          <Button asChild className="hidden sm:inline-flex" variant="outline">
+            <a href="https://wa.me/918717004236" target="_blank" rel="noopener noreferrer">
+              <MessageSquare className="mr-2 h-4 w-4" /> WhatsApp
+            </a>
+          </Button>
+           <Button asChild className="hidden sm:inline-flex">
+            <a href="tel:+918069061326">
+              <Phone className="mr-2 h-4 w-4" /> Call Us
+            </a>
           </Button>
           <Button
             variant="ghost"
@@ -80,9 +86,18 @@ export function Header() {
                 {link.label}
               </Link>
             ))}
-            <Button asChild className="w-full mt-2">
-                <Link href="/booking">Book a Stay</Link>
-            </Button>
+            <div className='w-full flex flex-col gap-2 mt-2'>
+              <Button asChild className="w-full" variant="outline">
+                 <a href="https://wa.me/918717004236" target="_blank" rel="noopener noreferrer">
+                  <MessageSquare className="mr-2 h-4 w-4" /> WhatsApp
+                </a>
+              </Button>
+              <Button asChild className="w-full">
+                <a href="tel:+918069061326">
+                  <Phone className="mr-2 h-4 w-4" /> Call Us
+                </a>
+              </Button>
+            </div>
           </nav>
         </div>
       )}

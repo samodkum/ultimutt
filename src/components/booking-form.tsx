@@ -115,7 +115,7 @@ Notes:
 
     // Simulate API call and open WhatsApp
     setTimeout(() => {
-        const whatsappUrl = `https://wa.me/919315435356?text=${encodeURIComponent(message)}`;
+        const whatsappUrl = `https://wa.me/918717004236?text=${encodeURIComponent(message)}`;
         window.open(whatsappUrl, '_blank');
         
         toast({

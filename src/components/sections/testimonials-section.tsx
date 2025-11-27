@@ -13,25 +13,40 @@ import { AnimatedSection } from "../animated-section";
 
 const testimonials = [
   {
-    name: "Aarav Sharma",
+    name: "Mishti’s hooman — Sushmit Mustafi",
     quote: "My golden retriever, Leo, had the time of his life! The staff sent daily updates and he came back so happy and tired. It's his second home now.",
     imgId: "testimonial-1",
   },
   {
-    name: "Priya Singh",
+    name: "Austin’s hooman — Deeptyoti Deka",
     quote: "I was so nervous leaving my anxious beagle, Moti, for the first time. The team at Ultimutt was incredibly patient and caring. I could see him playing on the CCTV. Highly recommend!",
     imgId: "testimonial-2",
   },
   {
-    name: "Rohan Mehra",
+    name: "Kaju’s hooman — Raaghav Gaur",
     quote: "The best daycare in Gurgaon, period. My husky has so much energy and he gets all the exercise he needs. The facility is clean and the staff is amazing.",
     imgId: "testimonial-3",
   },
+  {
+    name: "Sheru’s hooman — Bagmishree",
+    quote: "A fantastic place for my dog Sheru. He gets so excited when we even take the road to Ultimutt. They are professional, caring and the facility is top-notch.",
+    imgId: "gallery-1",
+  },
+  {
+    name: "Cherry’s hooman — Aarushi",
+    quote: "I've tried other places, but Ultimutt is by far the best. My little Cherry is treated like a princess and she loves the staff. The updates give me peace of mind.",
+    imgId: "gallery-8",
+  },
+  {
+    name: "Zo’s hooman — Yash Vyas",
+    quote: "Zo comes back happy and exhausted every single time. It's a huge relief to have a place I can trust completely. The team is passionate and it shows.",
+    imgId: "gallery-4"
+  }
 ];
 
 export function TestimonialsSection() {
   return (
-    <section>
+    <section id="testimonials">
       <div className="text-center mb-12">
         <AnimatedSection>
           <h2 className="text-3xl font-bold md:text-4xl font-headline">Pawsitive Reviews</h2>
