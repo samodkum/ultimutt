@@ -53,7 +53,7 @@ export function Header() {
         </nav>
         <div className="flex items-center gap-2">
           <Button asChild className="hidden sm:inline-flex" variant="outline">
-            <a href="https://wa.me/918717004236" target="_blank" rel="noopener noreferrer">
+            <a href="https://wa.me/918787004236" target="_blank" rel="noopener noreferrer">
               <MessageSquare className="mr-2 h-4 w-4" /> WhatsApp
             </a>
           </Button>
@@ -88,7 +88,7 @@ export function Header() {
             ))}
             <div className='w-full flex flex-col gap-2 mt-2'>
               <Button asChild className="w-full" variant="outline">
-                 <a href="https://wa.me/918717004236" target="_blank" rel="noopener noreferrer">
+                 <a href="https://wa.me/918787004236" target="_blank" rel="noopener noreferrer">
                   <MessageSquare className="mr-2 h-4 w-4" /> WhatsApp
                 </a>
               </Button>
