@@ -5,6 +5,7 @@ import { Header } from '@/components/layout/header';
 import { Footer } from '@/components/layout/footer';
 import { MobileNav } from '@/components/layout/mobile-nav';
 import { Chatbot } from '@/components/chatbot';
+import Script from 'next/script';
 
 export const metadata: Metadata = {
   title: 'Ultimutt Pet Resort | Dog Boarding Gurgaon & Daycare Gurgaon',
@@ -38,6 +39,13 @@ export default function RootLayout({
         <Footer />
         <MobileNav />
         <Toaster />
+        
+        {/* OmniDimension AI Receptionist Widget */}
+        <Script
+          id="omnidimension-web-widget"
+          src="https://omnidim.io/web_widget.js?secret_key=29e7ef6a75907dbc8834b1032095f47b"
+          strategy="lazyOnload"
+        />
       </body>
     </html>
   );
