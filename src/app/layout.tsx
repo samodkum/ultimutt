@@ -39,12 +39,6 @@ export default function RootLayout({
         <Footer />
         <MobileNav />
         <Toaster />
-        
-        {/* OmniDimension AI Receptionist Widget */}
-        <Script
-          id="omnidimension-web-widget"
-          src="https://omnidim.io/web_widget.js?secret_key=29e7ef6a75907dbc8834b1032095f47b"
-          strategy="lazyOnload"
         />
       </body>
     </html>
